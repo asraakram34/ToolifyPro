@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AI Essay (Basic) • ToolifyPro</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script></head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-6">
+<a href="/" class="text-sm text-slate-300">&larr; Home</a>
+<h1 class="text-2xl font-bold mt-4">AI Essay Generator (Basic, Client-side)</h1>
+<p class="text-slate-300 mt-2">This free version uses templates. For full AI, integrate an API later (I can help).</p>
+<input id="topic" placeholder="Topic (e.g., Climate Change)" class="mt-4 p-2 rounded bg-slate-800 w-full"/>
+<select id="tone" class="mt-2 p-2 rounded bg-slate-800 w-full">
+  <option value="formal">Formal</option>
+  <option value="casual">Casual</option>
+</select>
+<input id="words" type="number" placeholder="Approx words (200)" value="200" class="mt-2 p-2 rounded bg-slate-800 w-full"/>
+<button id="gen" class="mt-4 px-4 py-2 bg-indigo-500 rounded">Generate</button>
+<article id="out" class="mt-4 prose max-w-none text-slate-200"></article>
+<script>
+function repeatSentence(base, n){
+  let s='';
+  for(let i=0;i<n;i++) s+=base + ' ';
+  return s;
+}
+document.getElementById('gen').addEventListener('click', ()=>{
+  const topic = document.getElementById('topic').value || 'A topic';
+  const tone = document.getElementById('tone').value;
+  const words = parseInt(document.getElementById('words').value) || 200;
+  const intro = tone==='formal' ? `This essay discusses ${topic} in detail.` : `Let's talk about ${topic} and why it matters.`;
+  const para1 = `One important aspect of ${topic} is its impact on society. ${repeatSentence('This factor influences many people.', Math.max(2, Math.floor(words/120)))}`;
+  const para2 = `Another perspective is practical solutions and examples. ${repeatSentence('Implementing these solutions can help.', Math.max(2, Math.floor(words/120)))}`;
+  const conclusion = `In conclusion, ${topic} requires attention and thoughtful action.`;
+  document.getElementById('out').innerHTML = '<h2 class="text-xl font-semibold">'+topic+'</h2><p>'+intro+'</p><p>'+para1+'</p><p>'+para2+'</p><p>'+conclusion+'</p>';
+});
+</script>
+</body></html>

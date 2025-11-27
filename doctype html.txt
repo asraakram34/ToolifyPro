@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ToolifyPro — Free Tools, Premium Look</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+  <header class="bg-slate-800/50 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-500 to-indigo-500 flex items-center justify-center font-bold">TP</div>
+        <span class="font-semibold text-lg">ToolifyPro</span>
+      </a>
+      <nav class="hidden md:flex gap-4 text-sm">
+        <a href="/tools/image-to-pdf.html" class="hover:underline">Image → PDF</a>
+        <a href="/tools/tts.html" class="hover:underline">Text→Speech</a>
+        <a href="/tools/qr.html" class="hover:underline">QR Maker</a>
+        <a href="/tools/image-compressor.html" class="hover:underline">Image Compressor</a>
+        <a href="/tools/meme-caption.html" class="hover:underline">Meme Caption</a>
+        <a href="/tools/ai-essay.html" class="hover:underline">AI Essay (basic)</a>
+        <a href="/tools/premium-meme.html" class="px-3 py-2 bg-amber-500 text-black rounded">AI Meme (Paid)</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="menuBtn" class="p-2 rounded bg-slate-700/40">Menu</button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden px-4 pb-4">
+      <a class="block py-2" href="/tools/image-to-pdf.html">Image → PDF</a>
+      <a class="block py-2" href="/tools/tts.html">Text→Speech</a>
+      <a class="block py-2" href="/tools/qr.html">QR Maker</a>
+      <a class="block py-2" href="/tools/image-compressor.html">Image Compressor</a>
+      <a class="block py-2" href="/tools/meme-caption.html">Meme Caption</a>
+      <a class="block py-2" href="/tools/ai-essay.html">AI Essay (basic)</a>
+      <a class="block py-2" href="/tools/premium-meme.html">AI Meme (Paid)</a>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-12">
+    <section class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-4xl font-extrabold">ToolifyPro</h1>
+        <p class="mt-4 text-slate-300">Free, fast, and premium-looking tools — ready to deploy on Netlify/GitHub Pages. All free tools run in the browser (no server). Premium meme generator uses a payment link you control.</p>
+        <div class="mt-6 flex gap-3 flex-wrap">
+          <a class="px-4 py-2 bg-indigo-500 rounded" href="/tools/image-to-pdf.html">Image → PDF</a>
+          <a class="px-4 py-2 border rounded" href="/tools/tts.html">Text→Speech</a>
+          <a class="px-4 py-2 border rounded" href="/tools/qr.html">QR Maker</a>
+          <a class="px-4 py-2 border rounded" href="/tools/meme-caption.html">Meme Caption</a>
+        </div>
+        <p class="mt-6 text-sm text-slate-400">Premium Meme Generator price: <strong>$15</strong> (≈ <span id="pkr">PKR 3000</span>) — change it in the premium page.</p>
+      </div>
+      <div>
+        <div class="rounded-xl p-6 bg-slate-800/40 border border-slate-700">
+          <h3 class="font-semibold">Included Tools</h3>
+          <ul class="mt-4 space-y-2 text-slate-300">
+            <li>• Image → PDF (client-side)</li>
+            <li>• Text → Speech (browser API)</li>
+            <li>• QR Code Maker (client-side)</li>
+            <li>• Image Compressor (client-side)</li>
+            <li>• Meme Caption Maker (client-side)</li>
+            <li>• AI Essay Generator (basic template-based)</li>
+            <li>• Premium AI Meme Generator (paid checkout placeholder)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold">Deploy — Quick</h2>
+      <ol class="mt-4 list-decimal list-inside text-slate-300">
+        <li>Download the ZIP or create the folder & files locally (instructions below).</li>
+        <li>Go to <strong>Netlify</strong> → Sites → Drag & drop the <code>toolifypro</code> folder. It will auto-deploy with HTTPS and no Page Not Found.</li>
+        <li>Or push to GitHub and connect to GitHub Pages / Vercel.</li>
+      </ol>
+      <div class="mt-6">
+        <span class="inline-block px-4 py-2 bg-emerald-500 rounded">After you create files, upload the entire folder to Netlify.</span>
+      </div>
+    </section>
+
+    <footer class="mt-12 text-sm text-slate-400">
+      © ToolifyPro • Replace payment placeholder in /tools/premium-meme.html with your PayPal/Stripe/JazzCash links. All free tools run in-browser; no server required.
+    </footer>
+  </main>
+
+<script>
+document.getElementById('menuBtn')?.addEventListener('click', ()=> {
+  document.getElementById('mobileMenu').classList.toggle('hidden');
+});
+// simple PKR conversion display (approx)
+document.getElementById('pkr').textContent = 'PKR 3000';
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+ToolifyPro — Client-side tools. Replace payment links in tools/premium-meme.html with your payment provider link. Deploy on Netlify by dragging the unzipped "toolifypro" folder to Netlify Sites. All free tools run in-browser; no server needed for them.
